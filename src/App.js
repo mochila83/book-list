@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import BooksPage from './BooksPage';
 import logo from './logo.svg';
 import './App.css';
 
@@ -12,10 +13,10 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          <div>
           <Link to="books">Books</Link>
-          </div>
         </p>
+
+        <Route exact path="/books" component={BooksPage} />
       </div>
     );
   }
