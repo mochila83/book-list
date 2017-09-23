@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import BooksPage from './BooksPage';
-import logo from './logo.svg';
+import BookForm from './BookForm';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div className="ui container">
+        <div className="ui three item menu">
+         <NavLink className="item" activeClassName="active" exact to="/">Home</NavLink>
+         <NavLink className="item" activeClassName="active" exact to="/books">Books</NavLink>
+         <NavLink className="item" activeClassName="active" exact to="/books/new">Add New Book</NavLink>
         </div>
-        <p className="App-intro">
-          <Link to="books">Books</Link>
-        </p>
-
+    
         <Route exact path="/books" component={BooksPage} />
+        <Route path="/books/new" component={BookForm} />
+        <Route path="/book/:_id" component={BookForm} />
       </div>
     );
   }

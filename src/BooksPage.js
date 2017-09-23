@@ -1,9 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import BooksList from './BooksList';
+import { connect } from 'react-redux';
+import { fetchBooks } from './actions';
+
 
 
 class BooksPage extends React.Component {
+    componentDidMount() {
+        this.props.fetchBooks();
+    }
+
     render() {
         return (
             <div>
@@ -17,7 +23,8 @@ class BooksPage extends React.Component {
 }
 
 BooksPage.propTypes = {
-    books: React.PropTypes.array.isRequired
+    books: React.PropTypes.array.isRequired,
+    fetchBooks: React.PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {
@@ -26,4 +33,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(BooksPage);
+export default connect(mapStateToProps, { fetchBooks })(BooksPage);
