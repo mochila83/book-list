@@ -34,7 +34,7 @@ class BookForm extends React.Component {
 
     render() {
         return (
-            <form classname="ui form" onSubmit={this.handleChangeSubmit}>
+            <form className="ui form" onSubmit={this.handleChangeSubmit}>
                 <h1>Add new book</h1>
 
                 <div className={classnames('field', { error: !!this.state.errors.title})}>
