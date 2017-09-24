@@ -1,3 +1,4 @@
+
 export const SET_BOOKS = 'SET_BOOKS';
 
 export function setBooks(books) {
@@ -6,10 +7,10 @@ export function setBooks(books) {
 }
 
 
-export function fetchBooks() {
+ export function fetchBooks() {
     return dispatch => {
-        fetch('/api/books')
-            .then(res => res.json())
-            .then(data => dispatch(setBooks(data.books)));
-    }
-}
+       fetch('/api/books')
+       .then(res => res.json())
+   }
+ }
+

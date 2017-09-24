@@ -2,6 +2,7 @@ import React from 'react';
 import BooksList from './BooksList';
 import { connect } from 'react-redux';
 import { fetchBooks } from './actions';
+import PropTypes from 'prop-types';
 
 
 
@@ -23,8 +24,8 @@ class BooksPage extends React.Component {
 }
 
 BooksPage.propTypes = {
-    books: React.PropTypes.array.isRequired,
-    fetchBooks: React.PropTypes.func.isRequired
+    books: PropTypes.array.isRequired,
+    fetchBooks: PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {

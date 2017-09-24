@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function BooksList({ books }) {
     const emptyMessage = (
@@ -18,5 +19,5 @@ export default function BooksList({ books }) {
 }
 
 BooksList.propTypes = {
-    books: React.PropTypes.array.isRequired
+    books: PropTypes.array.isRequired
 }
